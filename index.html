@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="OmniCreed delivers reliable digital services built for growing businesses. Virtual assistants, SEO, Web Design, and more.">
+    <title>OmniCreed | Smart Digital Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+
+<body>
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav-overlay" style="display:none;opacity:0;visibility:hidden;"></div>
+    <nav class="mobile-nav" style="display:none;visibility:hidden;">
+        <a href="#services">Services</a>
+        <a href="#process">How It Works</a>
+        <a href="#about">Why Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="#" class="logo">OMNI<span>CREED</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">How We Work</a></li>
+                    <li><a href="#about">Why Us</a></li>
+                </ul>
+            </nav>
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <a href="#contact" class="btn btn-primary btn-sm hidden-mobile">Get Started</a>
+                <button class="mobile-menu-toggle" style="display:none;">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-accent"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Reliable Digital Services <br>Built for <span class="text-gradient">Growing
+                    Businesses</span></h1>
+            <p class="hero-subtitle">We provide scalable digital support that helps companies operate smarter and grow
+                faster.</p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+                <a href="#services" class="btn btn-secondary">View Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+        <div class="container trust-container">
+            <p class="trust-label">Trusted by startups & growing businesses</p>
+            <div class="trust-metrics">
+                <div class="metric-item">
+                    <span class="metric-value">100+</span>
+                    <span class="metric-desc">Projects Delivered</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value">9+</span>
+                    <span class="metric-desc">Years Experience</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Global Clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Capabilities</h2>
+                <p class="section-desc">Comprehensive digital solutions engineered for performance.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <a href="virtual-assistant.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Virtual Assistant Services</h3>
+                    <p>Dedicated remote professionals handling daily operations and admin tasks with precision.</p>
+                </a>
+                <!-- Service 2 -->
+                <a href="seo-growth.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                    </div>
+                    <h3>SEO &amp; Growth Strategy</h3>
+                    <p>Data-driven search optimization that drives organic traffic, rankings, and long-term revenue
+                        growth.</p>
+                </a>
+                <!-- Service 3 -->
+                <a href="email-automation.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <path d="M22 6l-10 7L2 6" />
+                        </svg>
+                    </div>
+                    <h3>Email Automation &amp; Outreach</h3>
+                    <p>Smart email systems, drip campaigns, and automated sequences that convert leads on autopilot.</p>
+                </a>
+                <!-- Service 4 -->
+                <a href="custom-software.html" class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#00f3ff" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                            <line x1="14" y1="4" x2="10" y2="20" />
+                        </svg>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>Full-stack web apps, SaaS platforms, and custom software built from scratch to power your
+                        business.</p>
+                </a>
+                <!-- Service 5 -->
+                <div class="service-card" onclick="window.location.href='performance-marketing.html'"
+                    style="cursor: pointer;">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#00ff9d" stroke-width="2">
+                            <path d="M12 20V10" />
+                            <path d="M18 20V4" />
+                            <path d="M6 20v-4" />
+                        </svg>
+                    </div>
+                    <h3>Performance Marketing</h3>
+                    <p>ROI-focused campaigns across paid search, social ads, and digital channels that scale your
+                        revenue.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="service-card" onclick="window.location.href='process-automation.html'"
+                    style="cursor: pointer;">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#FF9F1C" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Business Process Automation</h3>
+                    <p>Streamline repetitive workflows with smart automation — CRM pipelines, reporting, and
+                        integrations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Section -->
+    <section id="process" class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How We Work</h2>
+                <p class="section-desc">Four steps. Zero guesswork. Real results from day one.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h4>Deep Dive</h4>
+                    <p>We learn your business inside out — goals, bottlenecks, and growth opportunities.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h4>Blueprint</h4>
+                    <p>A custom-built strategy and action plan tailored to your specific needs.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h4>Launch</h4>
+                    <p>Our team executes fast, iterates faster, and ships results that matter.</p>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <h4>Scale</h4>
+                    <p>Ongoing optimization and support to compound your growth over time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="why-us-section">
+        <div class="container why-us-grid">
+            <div class="why-us-content">
+                <h2 class="section-title">Why OmniCreed?</h2>
+                <p class="why-us-intro">We are more than just a service provider; we are your long-term growth partner.
+                </p>
+                <ul class="why-us-list">
+                    <li>
+                        <div class="list-icon">✓</div>
+                        <div>
+                            <strong>Experienced Specialists</strong>
+                            <p>Vetted professionals who know their craft.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-icon">✓</div>
+                        <div>
+                            <strong>Scalable Models</strong>
+                            <p>Flexible services that grow with your needs.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="list-icon">✓</div>
+                        <div>
+                            <strong>Business-First Approach</strong>
+                            <p>We focus on ROI and tangible results.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="why-us-visual">
+                <div class="abstract-shape"></div>
+                <div class="card-visual card-1">
+                    <div class="card-header">
+                        <span>Growth</span>
+                        <span class="badge-success">+150%</span>
+                    </div>
+                    <div class="graph-wrapper">
+                        <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="gradient-growth" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#4ade80" stop-opacity="0.5" />
+                                    <stop offset="100%" stop-color="#4ade80" stop-opacity="0" />
+                                </linearGradient>
+                            </defs>
+                            <path class="graph-path-fill" d="M0,50 L0,40 C20,35 40,45 60,25 S80,10 100,5 V50 Z"
+                                fill="url(#gradient-growth)"></path>
+                            <path class="graph-path-line" d="M0,40 C20,35 40,45 60,25 S80,10 100,5" fill="none"
+                                stroke="#4ade80" stroke-width="2"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-visual card-2">
+                    <span>Efficiency</span>
+                    <h3>High</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-bg-glimmer"></div>
+        <div class="container cta-grid">
+            <!-- Left: Content -->
+            <div class="cta-text-content">
+                <span class="text-gradient"
+                    style="font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; font-size: 12px; display: block; margin-bottom: 12px;">Contact
+                    Us</span>
+                <h2 class="cta-title" style="font-size: 36px; margin-bottom: 16px; line-height: 1.1;">Ready to Start?
+                </h2>
+                <p class="cta-text"
+                    style="font-size: 16px; color: var(--text-muted); max-width: 400px; margin-bottom: 24px;">
+                    Fill out the form and our team will get back to you within 24 hours.
+                </p>
+
+                <div class="contact-methods" style="margin-top: 20px;">
+                    <div style="margin-bottom: 16px; display: flex; align-items: center; gap: 12px; color: white;">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <path d="M22 6l-10 7L2 6"></path>
+                        </svg>
+                        contact@omnicreed.com
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="cta-form-wrapper"
+                style="background: rgba(255,255,255,0.02); padding: 24px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+                <form class="contact-form-detailed" name="contact" method="POST" data-netlify="true"
+                    data-netlify-honeypot="bot-field">
+                    <!-- Hidden honeypot field for spam protection -->
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="3"
+                            placeholder="Tell us about your needs..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg"
+                        style="width: 100%; justify-content: center; font-size: 16px; padding: 12px;">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo footer-logo">OMNI<span>CREED</span></a>
+                <p class="footer-tagline">Comprehensive Digital Solutions for Modern Businesses.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="virtual-assistant.html">Virtual Assistants</a></li>
+                    <li><a href="seo-growth.html">SEO & Growth</a></li>
+                    <li><a href="custom-software.html">Custom Software</a></li>
+                    <li><a href="performance-marketing.html">Performance Marketing</a></li>
+                    <li><a href="email-automation.html">Email Automation</a></li>
+                    <li><a href="process-automation.html">Business Process Automation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contact</h4><br>
+                <p><a href="mailto:contact@omnicreed.com">contact@omnicreed.com</a></p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 OmniCreed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

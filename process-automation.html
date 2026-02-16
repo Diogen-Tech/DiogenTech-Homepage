@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Enterprise business process automation. Streamline workflows, integrate APIs, and reclaim thousands of hours.">
+    <title>Process Automation | OmniCreed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="automation-styles.css?v=1">
+</head>
+
+<body class="automation-page">
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav-overlay" style="display:none;opacity:0;visibility:hidden;"></div>
+    <nav class="mobile-nav" style="display:none;visibility:hidden;">
+        <a href="index.html">Home</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#impact">Impact</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">OMNI<span>CREED</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#solutions">Integrations</a></li>
+                    <li><a href="#impact">Efficiency</a></li>
+                    <li><a href="#contact">Consulting</a></li>
+                </ul>
+            </nav>
+            <div style="display:flex;gap:16px;align-items:center;">
+                <a href="#contact" class="btn btn-primary btn-sm hidden-mobile">Automate Now</a>
+                <button class="mobile-menu-toggle" style="display:none;">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="automation-hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                System Optimized
+            </div>
+            <h1 class="hero-title">Autopilot for <br><span class="highlight-amber">Your Enterprise.</span></h1>
+            <p style="font-size: 20px; color: #a0a0a0; max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
+                We connect your fragmented tools into a unified, self-driving ecosystem. Stop trading time for
+                repetitive tasks.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="#contact" class="btn-automate">Build My Workflow</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Nodes Grid -->
+    <section id="solutions" style="padding: 100px 0; position: relative; z-index: 2;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="font-size: 36px; color: white; margin-bottom: 16px; font-family: 'Outfit', sans-serif;">
+                    The Connectivity Engine
+                </h2>
+                <p style="color: #8892b0; max-width: 600px; margin: 0 auto;">
+                    We build the silent infrastructure that moves data between your teams and tools instantly.
+                </p>
+            </div>
+
+            <div class="node-grid">
+                <!-- Node 1: CRM -->
+                <div class="node-card">
+                    <div class="node-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Smart CRM Sync</h3>
+                    <p>Bi-directional sync between your CRM, email, and billing. No more manual data entry or duplicate
+                        lists.</p>
+                </div>
+
+                <!-- Node 2: Reporting -->
+                <div class="node-card">
+                    <div class="node-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Automated Reporting</h3>
+                    <p>Generate Weekly/Monthly KPI reports from 10+ sources and deliver them to Slack or Email
+                        automatically.</p>
+                </div>
+
+                <!-- Node 3: Custom Workflow -->
+                <div class="node-card">
+                    <div class="node-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Trigger-Based Action</h3>
+                    <p>If "X" happens in Stripe, do "Y" in Slack and "Z" in Support. Complex logic handled instantly.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact / Comparison -->
+    <section id="impact" class="efficiency-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="font-size: 36px; color: white; margin-bottom: 32px; font-family: 'Outfit', sans-serif;">
+                    Operational Transformation
+                </h2>
+            </div>
+
+            <div class="comparison-container">
+                <!-- Before -->
+                <div class="state-card state-chaos">
+                    <span class="state-label label-chaos">Current State</span>
+                    <h3 class="state-title">The Chaos</h3>
+                    <p style="color: #ccc;">Manual entry, mismatched data, slow response times, and human error.</p>
+                    <div class="stat-highlight" style="color:#ff3b30;">20+ Hours</div>
+                    <p class="stat-desc">Wasted per week on admin tasks that machines could do instantly.</p>
+                </div>
+
+                <!-- After -->
+                <div class="state-card state-order">
+                    <span class="state-label label-order">Future State</span>
+                    <h3 class="state-title">The Engine</h3>
+                    <p style="color: #ccc;">Instant sync, perfect accuracy, real-time alerts, and scalable logic.</p>
+                    <div class="stat-highlight" style="color:var(--circuit-blue);">Zero Friction</div>
+                    <p class="stat-desc">Your team focuses on strategy while scripts handle the operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="cta-section" style="margin:0 24px 60px;">
+        <div class="cta-bg-glimmer"></div>
+        <div class="container cta-grid">
+            <div class="cta-text-content">
+                <span class="text-gradient"
+                    style="font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;display:block;margin-bottom:12px;">SYSTEM
+                    INITIALIZATION</span>
+                <h2 class="cta-title" style="font-size:36px;margin-bottom:16px;line-height:1.1;">Build Your Engine.</h2>
+                <p class="cta-text" style="font-size:16px;color:var(--text-muted);max-width:400px;margin-bottom:24px;">
+                    Describe your most repetitive manual process. We'll design an automation to kill it.
+                </p>
+                <div style="display:flex;align-items:center;gap:12px;color:white;margin-top:20px;">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <path d="M22 6l-10 7L2 6" />
+                    </svg>
+                    automation@omnicreed.com
+                </div>
+            </div>
+            <div
+                style="background:rgba(255,255,255,0.02);padding:28px;border-radius:16px;border:1px solid rgba(255,255,255,0.05);">
+                <form class="contact-form-detailed" name="automation-inquiry" method="POST" data-netlify="true"
+                    data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="automation-inquiry">
+                    <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+                    <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name"
+                            placeholder="Jane Doe" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"
+                            placeholder="jane@enterprise.com" required></div>
+                    <div class="form-group"><label for="process">Process to Automate</label>
+                        <select id="process" name="process"
+                            style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px 14px;color:white;font-family:var(--font-sans);font-size:14px;">
+                            <option value="crm-data">CRM Data Entry</option>
+                            <option value="lead-routing">Lead Routing</option>
+                            <option value="reporting">Reporting & Dashboards</option>
+                            <option value="invoicing">Invoicing & Finance</option>
+                            <option value="other">Other Workflow</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="message">Workflow Details</label><textarea id="message"
+                            name="message" rows="3"
+                            placeholder="e.g. 'Every time we get a lead, I have to copy paste it to...'"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-automate"
+                        style="width:100%;text-align:center;padding:14px;font-size:16px;border-radius:12px;">Initialize
+                        Automation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container" style="text-align:center;padding:40px 24px;">
+            <a href="index.html" class="logo" style="display:block;margin-bottom:16px;">OMNI<span>CREED</span></a>
+            <p style="color:var(--text-muted);font-size:14px;margin-bottom:24px;">Comprehensive Digital Solutions for
+                Modern Businesses</p>
+            <p style="color:var(--text-muted);font-size:13px;">&copy; 2026 OmniCreed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

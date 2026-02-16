@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Enterprise-grade custom software and AI solutions. We build the technology that powers your next stage of growth.">
+    <title>Custom Software & AI | OmniCreed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="software-styles.css?v=1">
+</head>
+
+<body class="software-page">
+    <!-- Mobile Nav (hidden by default, shown via JS) -->
+    <div class="mobile-nav-overlay" style="display:none;opacity:0;visibility:hidden;"></div>
+    <nav class="mobile-nav" style="display:none;visibility:hidden;">
+        <a href="index.html">Home</a>
+        <a href="#capabilities">Services</a>
+        <a href="#consult">Consultation</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">OMNI<span>CREED</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#capabilities">Capabilities</a></li>
+                    <li><a href="#tech">Technology</a></li>
+                    <li><a href="#consult">Consultation</a></li>
+                </ul>
+            </nav>
+            <div style="display:flex;gap:16px;align-items:center;">
+                <a href="#consult" class="btn btn-primary btn-sm hidden-mobile">Book Discovery</a>
+                <button class="mobile-menu-toggle" style="display:none;">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="software-hero">
+        <div class="hero-glow"></div>
+        <div class="container hero-content">
+            <div class="tech-tag">Enterprise Solutions</div>
+            <h1 class="glitch-text">Scale Without <br><span class="glitch-accent">Limits.</span></h1>
+            <p style="font-size: 20px; color: #a0a0a0; max-width: 700px; margin: 0 auto 40px; line-height: 1.6;">
+                We engineer the custom software and AI infrastructure that transforms ambitious businesses into industry
+                leaders.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <a href="#consult" class="btn btn-primary btn-lg"
+                    style="box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);">Initialize Project</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Capabilities / Tech Grid -->
+    <section id="capabilities" style="padding: 100px 0; position: relative; z-index: 2;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="font-size: 36px; color: white; margin-bottom: 16px; font-family: var(--font-heading);">
+                    Engineered for Dominance
+                </h2>
+                <p style="color: #8892b0; max-width: 600px; margin: 0 auto;">
+                    Off-the-shelf software has limits. We build what doesn't exist yet.
+                </p>
+            </div>
+
+            <div class="tech-grid">
+                <!-- AI Integration -->
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
+                            <path d="M12 12L2.5 14.5M12 12V22M12 12l9.5-2.5" />
+                        </svg>
+                    </div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Integrate predictive analytics, LLMs, and intelligent automation directly into your workflows to
+                        outpace competitors.</p>
+                </div>
+
+                <!-- SaaS Development -->
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                            <polyline points="2 17 12 22 22 17" />
+                            <polyline points="2 12 12 17 22 12" />
+                        </svg>
+                    </div>
+                    <h3>Custom SaaS Platforms</h3>
+                    <p>Scalable, multi-tenant architectures built to handle millions of users with zero friction.</p>
+                </div>
+
+                <!-- Process Automation -->
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Internal Tooling</h3>
+                    <p>Eliminate manual bottlenecks. We build custom dashboards and admin panels that save thousands of
+                        hours.</p>
+                </div>
+
+                <!-- Mobile Apps -->
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Native Mobile Apps</h3>
+                    <p>High-performance iOS and Android applications that deliver seamless experiences to your
+                        customers.</p>
+                </div>
+
+                <!-- Cloud Infrastructure -->
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                        </svg>
+                    </div>
+                    <h3>Cloud Infrastructure</h3>
+                    <p>AWS/Azure/GCP architecture designed for security, redundancy, and limitless scale.</p>
+                </div>
+
+                <!-- API Integration -->
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                    </div>
+                    <h3>Complex Integrations</h3>
+                    <p>Connect disparate systems into a unified ecosystem. If it has an API, we can automate it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack / Tooling Section -->
+    <section id="tech" class="tech-stack-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="font-size: 36px; color: white; margin-bottom: 16px; font-family: var(--font-heading);">
+                    Built on the Edge
+                </h2>
+                <p style="color: #8892b0; max-width: 600px; margin: 0 auto;">
+                    We deploy the most advanced production-ready stack for speed, scalability, and intelligence.
+                </p>
+            </div>
+
+            <div class="stack-grid">
+                <!-- Frontend -->
+                <div class="stack-category">
+                    <h3>Frontend & UI</h3>
+                    <div class="stack-tags">
+                        <span class="tech-pill">React</span>
+                        <span class="tech-pill">Next.js</span>
+                        <span class="tech-pill">TypeScript</span>
+                        <span class="tech-pill">Vue.js</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                        <span class="tech-pill">Three.js</span>
+                        <span class="tech-pill">Framer Motion</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="stack-category">
+                    <h3>Backend & Core</h3>
+                    <div class="stack-tags">
+                        <span class="tech-pill">Node.js</span>
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Go (Golang)</span>
+                        <span class="tech-pill">Rust</span>
+                        <span class="tech-pill">GraphQL</span>
+                        <span class="tech-pill">PostgreSQL</span>
+                        <span class="tech-pill">Redis</span>
+                    </div>
+                </div>
+
+                <!-- AI & ML -->
+                <div class="stack-category">
+                    <h3>Artificial Intelligence</h3>
+                    <div class="stack-tags">
+                        <span class="tech-pill pill-ai">OpenAI API</span>
+                        <span class="tech-pill pill-ai">Llama 2</span>
+                        <span class="tech-pill pill-ai">LangChain</span>
+                        <span class="tech-pill pill-ai">Pinecone</span>
+                        <span class="tech-pill pill-ai">TensorFlow</span>
+                        <span class="tech-pill pill-ai">Hugging Face</span>
+                    </div>
+                </div>
+
+                <!-- Cloud -->
+                <div class="stack-category">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="stack-tags">
+                        <span class="tech-pill">AWS</span>
+                        <span class="tech-pill">Google Cloud</span>
+                        <span class="tech-pill">Docker</span>
+                        <span class="tech-pill">Kubernetes</span>
+                        <span class="tech-pill">Terraform</span>
+                        <span class="tech-pill">Vercel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Pricing / Consultation -->
+    <section id="consult" class="consult-section">
+        <div class="container">
+            <div class="consult-card">
+                <span class="consult-label">Private Consultation</span>
+                <h2 class="consult-title">This Level of Engineering<br>Requires a Strategy.</h2>
+                <p class="consult-desc">
+                    We don't sell pre-packaged solutions. We partner with you to architect the exact technology your
+                    business needs to scale.
+                    <br><br>
+                    <strong>Pricing is custom tailored to your project scope and ROI targets.</strong>
+                </p>
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#contact" class="btn-neon">Request Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form (Standard but styled for context) -->
+    <section id="contact" class="cta-section" style="margin:0 24px 60px;">
+        <div class="cta-bg-glimmer"></div>
+        <div class="container cta-grid">
+            <div class="cta-text-content">
+                <span class="text-gradient"
+                    style="font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:12px;display:block;margin-bottom:12px;">Start
+                    Build</span>
+                <h2 class="cta-title" style="font-size:36px;margin-bottom:16px;line-height:1.1;">Ready to Innovate?</h2>
+                <p class="cta-text" style="font-size:16px;color:var(--text-muted);max-width:400px;margin-bottom:24px;">
+                    Tell us about your vision. Our engineers will review your requirements and provide a technical
+                    roadmap.
+                </p>
+                <div style="display:flex;align-items:center;gap:12px;color:white;margin-top:20px;">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <path d="M22 6l-10 7L2 6" />
+                    </svg>
+                    contact@omnicreed.com
+                </div>
+            </div>
+            <div
+                style="background:rgba(255,255,255,0.02);padding:28px;border-radius:16px;border:1px solid rgba(255,255,255,0.05);">
+                <form class="contact-form-detailed" name="software-inquiry" method="POST" data-netlify="true"
+                    data-netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="software-inquiry">
+                    <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+                    <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name"
+                            placeholder="Jane Doe" required></div>
+                    <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email"
+                            placeholder="jane@enterprise.com" required></div>
+                    <div class="form-group"><label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type"
+                            style="width:100%;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:10px 14px;color:white;font-family:var(--font-sans);font-size:14px;">
+                            <option value="ai-integration">AI Integration / Automation</option>
+                            <option value="saas-platform">Custom SaaS Platform</option>
+                            <option value="mobile-app">Mobile Application</option>
+                            <option value="internal-tool">Internal Tooling / Dashboard</option>
+                            <option value="other">Other / Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label for="message">Project Details</label><textarea id="message"
+                            name="message" rows="3"
+                            placeholder="Briefly describe your goals and requirements..."></textarea></div>
+                    <button type="submit" class="btn btn-primary"
+                        style="width:100%;text-align:center;padding:14px;font-size:16px;border-radius:12px; background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple)); border: none;">Request
+                        Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container" style="text-align:center;padding:40px 24px;">
+            <a href="index.html" class="logo" style="display:block;margin-bottom:16px;">OMNI<span>CREED</span></a>
+            <p style="color:var(--text-muted);font-size:14px;margin-bottom:24px;">Comprehensive Digital Solutions for
+                Modern Businesses</p>
+            <p style="color:var(--text-muted);font-size:13px;">&copy; 2026 OmniCreed. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=2"></script>
+</body>
+
+</html>

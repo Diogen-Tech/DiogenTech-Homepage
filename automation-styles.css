@@ -1,0 +1,310 @@
+/* ===== Business Process Automation Page Styles ===== */
+
+:root {
+    --amber-energy: #FF9F1C;
+    --circuit-blue: #00A8E8;
+    --deep-bg: #050505;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.02);
+    --card-bg: #0a0c10;
+}
+
+body.automation-page {
+    background-color: var(--deep-bg);
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* --- Hero Section: The Neural Network --- */
+.automation-hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+/* Circuit Board Background Animation */
+.automation-hero::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background-image:
+        radial-gradient(var(--glass-border) 1px, transparent 1px),
+        linear-gradient(rgba(0, 168, 232, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px, 100px 100px;
+    background-position: center center;
+    box-shadow: inset 0 0 100px #000;
+    opacity: 0.5;
+    z-index: 1;
+    animation: pulseGrid 8s ease-in-out infinite;
+}
+
+@keyframes pulseGrid {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.hero-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(255, 159, 28, 0.08) 0%, rgba(0, 168, 232, 0.05) 50%, transparent 80%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.automation-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+}
+
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border: 1px solid var(--amber-energy);
+    background: rgba(255, 159, 28, 0.05);
+    color: var(--amber-energy);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 100px;
+    margin-bottom: 32px;
+    box-shadow: 0 0 15px rgba(255, 159, 28, 0.2);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--amber-energy);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--amber-energy);
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.hero-title {
+    font-size: 72px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 800;
+    color: white;
+    font-family: 'Outfit', sans-serif;
+}
+
+.highlight-amber {
+    color: var(--amber-energy);
+    text-shadow: 0 0 20px rgba(255, 159, 28, 0.3);
+}
+
+.highlight-blue {
+    color: var(--circuit-blue);
+}
+
+/* --- Workflow Cards (Circuit Nodes) --- */
+.node-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.node-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    padding: 40px 32px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Connecting Line Effect */
+.node-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber-energy), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.node-card:hover::after {
+    transform: translateX(100%);
+    transition: transform 1s linear;
+}
+
+.node-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 159, 28, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.node-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 24px;
+    color: var(--amber-energy);
+    filter: drop-shadow(0 0 5px rgba(255, 159, 28, 0.4));
+}
+
+.node-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.node-card p {
+    color: #8892b0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* --- Efficiency Comparison (Before/After) --- */
+.efficiency-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--deep-bg) 0%, #0d0f14 100%);
+    border-top: 1px solid var(--glass-border);
+}
+
+.comparison-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.state-card {
+    padding: 60px 40px;
+    position: relative;
+}
+
+.state-chaos {
+    background: rgba(255, 59, 48, 0.05);
+    /* Subtle red tint */
+    border-right: 1px solid var(--glass-border);
+}
+
+.state-order {
+    background: rgba(0, 168, 232, 0.05);
+    /* Subtle blue tint */
+}
+
+.state-label {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.label-chaos {
+    color: #ff3b30;
+}
+
+.label-order {
+    color: var(--circuit-blue);
+}
+
+.state-title {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 16px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.stat-highlight {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    margin: 30px 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+.stat-desc {
+    color: #a0a0a0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* --- CTA Section --- */
+.btn-automate {
+    background: var(--amber-energy);
+    color: #000;
+    padding: 16px 48px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 159, 28, 0.3);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-automate:hover {
+    background: #ffb147;
+    box-shadow: 0 0 40px rgba(255, 159, 28, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .node-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-container {
+        grid-template-columns: 1fr;
+        border-right: none;
+    }
+
+    .state-chaos {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+    }
+}
