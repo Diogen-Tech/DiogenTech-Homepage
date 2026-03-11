@@ -2,6 +2,7 @@
 
 [build]
   publish = "."
+  functions = "netlify/functions"
   
 # Form Settings - Spam Protection
 [build.environment]
@@ -28,3 +29,9 @@
   for = "/*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# Friendly redirect for the Meta webhook endpoint
+[[redirects]]
+  from = "/api/meta-webhook"
+  to   = "/.netlify/functions/meta-webhook"
+  status = 200
