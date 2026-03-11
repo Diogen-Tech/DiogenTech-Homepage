@@ -1,30 +1,29 @@
 /**
- * Meta (Facebook/Instagram) Webhook Handler
- * Netlify Serverless Function
+ * Meta Webhook Handler – Netlify Serverless Function
  *
- * Endpoint: /.netlify/functions/meta-webhook
+ * Production Endpoints:
+ *   https://xyz.com/.netlify/functions/meta-webhook   ← use this in Meta Dashboard
+ *   https://xyz.com/api/meta-webhook                  ← friendly alias
  *
- * Setup in Meta App Dashboard:
- *   Callback URL: https://<your-site>.netlify.app/.netlify/functions/meta-webhook
- *   Verify Token:  Set META_VERIFY_TOKEN in Netlify environment variables
- *
- * Required Environment Variables (set in Netlify Dashboard > Site Settings > Environment Variables):
- *   META_VERIFY_TOKEN  - A secret string you define; must match what you enter in Meta App Dashboard
- *   META_APP_SECRET    - Your Meta App Secret (used to verify payload signatures)
+ * Required Environment Variables (Netlify → Site Settings → Environment Variables):
+ *   META_VERIFY_TOKEN   – The token you enter in Meta App Dashboard
+ *   META_APP_SECRET     – Your Meta App Secret (for payload signature verification)
+ *   WHATSAPP_TOKEN      – WhatsApp System User / Page Access Token
+ *   WHATSAPP_PHONE_ID   – Phone Number ID from Meta App Dashboard
+ *   SUPABASE_URL        – e.g. https://xxxx.supabase.co
+ *   SUPABASE_KEY        – Supabase anon or service-role key
  */
 
 const crypto = require("crypto");
+const bot    = require("./lib/bot");
 
-// ---------------------------------------------------------------------------
-// Helper – verify the X-Hub-Signature-256 header sent by Meta
-// ---------------------------------------------------------------------------
-function verifySignature(rawBody, signature, appSecret) {
-  if (!signature || !appSecret) return false;
+// ── Signature verification ───────────────────────────────────────────────────
+function verifySignature(rawBody, signature, secret) {
+  if (!signature || !secret) return false;
   const expected = "sha256=" + crypto
-    .createHmac("sha256", appSecret)
+    .createHmac("sha256", secret)
     .update(rawBody, "utf8")
     .digest("hex");
-  // Use timingSafeEqual to prevent timing attacks
   try {
     return crypto.timingSafeEqual(Buffer.from(expected), Buffer.from(signature));
   } catch {
@@ -32,43 +31,35 @@ function verifySignature(rawBody, signature, appSecret) {
   }
 }
 
-// ---------------------------------------------------------------------------
-// Main handler
-// ---------------------------------------------------------------------------
+// ── Main handler ─────────────────────────────────────────────────────────────
 exports.handler = async (event) => {
   const { httpMethod, queryStringParameters, body, headers } = event;
 
-  // ── GET ── Webhook Verification (Meta sends this when you save the webhook)
+  // ── GET: Webhook verification handshake ─────────────────────────────────
   if (httpMethod === "GET") {
     const mode      = queryStringParameters?.["hub.mode"];
     const token     = queryStringParameters?.["hub.verify_token"];
     const challenge = queryStringParameters?.["hub.challenge"];
 
     if (mode === "subscribe" && token === process.env.META_VERIFY_TOKEN) {
-      console.log("✅ Meta webhook verified successfully.");
-      return {
-        statusCode: 200,
-        body: challenge,
-      };
+      console.log("✅ Meta webhook verified.");
+      return { statusCode: 200, body: challenge };
     }
-
-    console.warn("⚠️  Webhook verification failed – token mismatch or wrong mode.");
+    console.warn("⚠️  Webhook verification failed – token mismatch.");
     return { statusCode: 403, body: "Forbidden" };
   }
 
-  // ── POST ── Receiving webhook events
+  // ── POST: Incoming events ────────────────────────────────────────────────
   if (httpMethod === "POST") {
-    // 1. Verify signature (optional but strongly recommended)
+    // Verify payload signature
     const signature = headers["x-hub-signature-256"];
     if (process.env.META_APP_SECRET) {
-      const isValid = verifySignature(body, signature, process.env.META_APP_SECRET);
-      if (!isValid) {
+      if (!verifySignature(body, signature, process.env.META_APP_SECRET)) {
         console.error("❌ Signature verification failed.");
         return { statusCode: 401, body: "Unauthorized" };
       }
     }
 
-    // 2. Parse payload
     let payload;
     try {
       payload = JSON.parse(body);
@@ -76,98 +67,46 @@ exports.handler = async (event) => {
       return { statusCode: 400, body: "Bad Request – invalid JSON" };
     }
 
-    // 3. Route events by object type
-    const object = payload?.object;
-    const entries = payload?.entry ?? [];
+    await processPayload(payload);
 
-    console.log(`📨 Received webhook | object: ${object} | entries: ${entries.length}`);
-
-    for (const entry of entries) {
-      // ── Page / Feed events
-      if (object === "page") {
-        for (const change of entry.changes ?? []) {
-          await handlePageChange(change, entry.id);
-        }
-      }
-
-      // ── Instagram events
-      if (object === "instagram") {
-        for (const change of entry.changes ?? []) {
-          await handleInstagramChange(change, entry.id);
-        }
-      }
-
-      // ── WhatsApp Business events
-      if (object === "whatsapp_business_account") {
-        for (const change of entry.changes ?? []) {
-          await handleWhatsAppChange(change, entry.id);
-        }
-      }
-    }
-
-    // Always respond 200 quickly so Meta doesn't retry
     return { statusCode: 200, body: "EVENT_RECEIVED" };
   }
 
-  // Any other method
   return { statusCode: 405, body: "Method Not Allowed" };
 };
 
-// ---------------------------------------------------------------------------
-// Event handlers – add your business logic here
-// ---------------------------------------------------------------------------
+// ── Payload router ────────────────────────────────────────────────────────────
+async function processPayload(payload) {
+  const object  = payload?.object;
+  const entries = payload?.entry ?? [];
 
-async function handlePageChange(change, pageId) {
-  const { field, value } = change;
-  console.log(`📄 Page [${pageId}] | field: ${field}`, JSON.stringify(value));
-
-  switch (field) {
-    case "feed":
-      // New post, comment, like, etc.
-      console.log("  → Feed change detected:", value?.item, value?.verb);
-      break;
-    case "messages":
-      // Messenger message received
-      console.log("  → New Messenger message from:", value?.sender?.id);
-      break;
-    case "leadgen":
-      // Lead form submission
-      console.log("  → New lead gen form submission. Lead ID:", value?.leadgen_id);
-      break;
-    default:
-      console.log(`  → Unhandled page field: ${field}`);
-  }
-}
-
-async function handleInstagramChange(change, accountId) {
-  const { field, value } = change;
-  console.log(`📸 Instagram [${accountId}] | field: ${field}`, JSON.stringify(value));
-
-  switch (field) {
-    case "comments":
-      console.log("  → New IG comment:", value?.text, "from:", value?.from?.username);
-      break;
-    case "mentions":
-      console.log("  → New IG mention in media:", value?.media_id);
-      break;
-    case "messages":
-      console.log("  → New IG Direct Message from:", value?.sender?.id);
-      break;
-    default:
-      console.log(`  → Unhandled instagram field: ${field}`);
-  }
-}
-
-async function handleWhatsAppChange(change, wabaId) {
-  const { field, value } = change;
-  console.log(`💬 WhatsApp [${wabaId}] | field: ${field}`);
-
-  if (field === "messages") {
-    for (const msg of value?.messages ?? []) {
-      console.log("  → Message type:", msg.type, "from:", msg.from);
-      if (msg.type === "text") {
-        console.log("    Text:", msg.text?.body);
+  for (const entry of entries) {
+    for (const change of entry.changes ?? []) {
+      if (object === "whatsapp_business_account" && change.field === "messages") {
+        await processWhatsAppChange(change.value);
       }
+    }
+  }
+}
+
+// ── WhatsApp messages ─────────────────────────────────────────────────────────
+async function processWhatsAppChange(value) {
+  const messages = value?.messages;
+  if (!messages?.length) return; // ignore status updates (value.statuses)
+
+  for (const message of messages) {
+    const phone = message.from; // e.g. "8801711234567"
+
+    const supported = ["text", "interactive", "location"];
+    if (!supported.includes(message.type)) {
+      console.log(`[WA] Skipping unsupported type: ${message.type} from ${phone}`);
+      continue;
+    }
+
+    try {
+      await bot.handleMessage(phone, message);
+    } catch (err) {
+      console.error(`[WA] Error handling message from ${phone}:`, err);
     }
   }
 }
